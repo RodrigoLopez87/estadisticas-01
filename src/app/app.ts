@@ -1,9 +1,18 @@
 import {Component} from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  template: `
-    Welcome to Angular!
-  `,
+  imports: [RouterOutlet],
+  templateUrl: './app.html',
+  styleUrl: './app.scss'
 })
-export class App {}
+export class App {
+
+  collapsed = false;
+
+  toggleSidebar() {
+    this.collapsed = !this.collapsed;
+  }
+
+}
